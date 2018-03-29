@@ -1,0 +1,32 @@
+:host {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+
+    .limit { width: 45px }
+
+    ul.pages {
+        display: flex;
+        list-style-type: none;
+        user-select: none;  
+
+        li {
+            display: none;
+            padding: 5px 10px;
+            color: #007bff;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+
+            &.visible { display: block }
+
+            &.active{
+                color: #fff;
+                background-color: #007bff;
+                border: 1px solid #007bff;
+                cursor: default;
+            }
+        }
+    }
+}

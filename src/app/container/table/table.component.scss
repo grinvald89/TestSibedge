@@ -1,0 +1,32 @@
+:host {
+    overflow: auto;
+    box-sizing: border-box;
+    display: block;
+    margin: 5px;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+
+    table {
+        width: 100%;
+        min-width: 1400px;
+        border-spacing: 0;
+    
+        tr {
+            th {
+                padding: 10px 10px;
+                text-align: left;
+                border-bottom: 1px solid rgba(0,0,0,.12);
+                cursor: default;
+            }
+    
+            td {
+                padding: 3px 10px;
+                border-bottom: 1px solid rgba(0,0,0,.12);
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+        color: #a5a5a5;
+    }
+}

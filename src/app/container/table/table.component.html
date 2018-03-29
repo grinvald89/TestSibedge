@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Date of Birth</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Nat</th>
+      <th>Registered</th>
+    </tr></thead>
+  <tbody>
+    <tr *ngFor="let user of Users | filterTable: Filter | slice: (PageNumber-1)*Limit: PageNumber*Limit; let i=index">
+      <td><img src="{{ user.picture.thumbnail }}"></td>
+      <td>{{ user.name.title  + " " + user.name.first + " " + user.name.last | titlecase }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.location.city | titlecase }}</td>
+      <td>{{ user.dob | date: "dd.MM.yyyy" }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.id.name + " " + user.id.value}}</td>
+      <td>{{ user.login.username }}</td>
+      <td>{{ user.login.password }}</td>
+      <td>{{ user.nat }}</td>
+      <td>{{ user.registered | date: "dd.MM.yyyy hh:mm:ss" }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="!(Users | filterTable: Filter).length">Список пуст!</p>

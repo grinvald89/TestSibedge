@@ -1,0 +1,14 @@
+<app-filters [(Filter)]="filter"></app-filters>
+
+<app-table
+    [Users]="users"
+    [Limit]="limit"
+    [Filter]="filter"
+    [PageNumber]="pageNumber">
+</app-table>
+
+<app-paginator
+    [(Limit)]="limit"
+    [(PageNumber)]="pageNumber"
+    [PageCount]="pageCount">
+</app-paginator>

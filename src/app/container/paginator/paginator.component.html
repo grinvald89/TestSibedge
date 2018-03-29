@@ -1,0 +1,33 @@
+<mat-form-field class="limit">
+  <mat-select [(value)]="limitSelected">
+    <mat-option value="10">10</mat-option>
+    <mat-option value="20">20</mat-option>
+    <mat-option value="30">30</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<ul class="pages">
+  <li
+    class="visible"
+    *ngIf="PageNumber > 1"
+    (click)="pageNumberSelected = pageNumberSelected - 1">
+      <
+  </li>
+
+  <li
+    *ngFor="let item of Pages"
+    (click)="pageNumberSelected = item.page"
+    [ngClass]="{
+      'active': PageNumber == item.page,
+      'visible': IsVisiblePage(item.page)
+    }">
+      {{ item.page }}
+  </li>
+
+  <li
+    class="visible"
+    *ngIf="PageNumber < Pages.length"
+    (click)="pageNumberSelected = pageNumberSelected + 1">
+      >
+  </li>
+</ul>

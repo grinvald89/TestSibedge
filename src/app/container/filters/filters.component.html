@@ -1,0 +1,44 @@
+<div class="row">
+  <mat-form-field class="last-name">
+    <input matInput
+      type="text"
+      placeholder="Фамилия"
+      [(ngModel)]="Filter.lastName" (ngModelChange)="FilterChange.emit(Filter)"/>
+  </mat-form-field>
+    
+  <mat-form-field class="phone">
+    <input matInput
+      type="text"
+      placeholder="Телефон"
+      [(ngModel)]="Filter.phone" (ngModelChange)="FilterChange.emit(Filter)"/>
+  </mat-form-field>
+    
+  <mat-form-field class="city">
+    <input matInput
+      type="text"
+      placeholder="Город"
+      [(ngModel)]="Filter.city" (ngModelChange)="FilterChange.emit(Filter)"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+      [matDatepicker]="picker1"
+      placeholder="Выберите дату"
+      (ngModelChange)="FilterChange.emit(Filter)"
+      [formControl]="Filter.dateFrom">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+    
+  <mat-form-field>
+    <input matInput
+      [matDatepicker]="picker2"
+      placeholder="Выберите дату"
+      (ngModelChange)="FilterChange.emit(Filter)"
+      [formControl]="Filter.dateTo">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="OnClear()">Сброс</button>
+</div>

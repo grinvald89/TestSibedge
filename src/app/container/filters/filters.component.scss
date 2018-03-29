@@ -1,0 +1,17 @@
+:host {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px 15px 5px; 
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+
+        mat-form-field { margin-right: 18px }
+    }
+
+    button { height: 40px }
+}
